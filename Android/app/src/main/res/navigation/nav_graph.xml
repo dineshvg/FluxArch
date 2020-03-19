@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loadingFragment">
+    <fragment
+        android:id="@+id/loadingFragment"
+        android:name="com.dinesh.fluxarch.view.LoadingFragment"
+        android:label="fragment_loading"
+        tools:layout="@layout/fragment_loading" >
+        <action
+            android:id="@+id/action_loadingFragment_to_employeeFragment"
+            app:destination="@id/employeeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/employeeFragment"
+        android:name="com.dinesh.fluxarch.view.EmployeeFragment"
+        android:label="fragment_employee"
+        tools:layout="@layout/fragment_employee" />
+</navigation>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.EmployeeFragment">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/fragment_employee_card_view"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="50dp">
+
+            <TextView
+                android:id="@+id/employee_name_text_view_holder"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="25dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name" />
+
+            <TextView
+                android:id="@+id/employee_name_text_view"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="25dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/employee_name_text_view_holder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Dinesh" />
+
+            <TextView
+                android:id="@+id/employee_age_text_view_holder"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="25dp"
+                app:layout_constraintTop_toBottomOf="@id/employee_name_text_view_holder"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/age" />
+
+            <TextView
+                android:id="@+id/employee_age_text_view"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="25dp"
+                app:layout_constraintTop_toBottomOf="@id/employee_name_text_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/employee_name_text_view_holder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="30" />
+
+            <TextView
+                android:id="@+id/employee_salary_text_view_holder"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginBottom="25dp"
+                app:layout_constraintTop_toBottomOf="@id/employee_age_text_view_holder"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/salary" />
+
+            <TextView
+                android:id="@+id/employee_salary_text_view"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="25dp"
+                app:layout_constraintTop_toBottomOf="@id/employee_age_text_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/employee_name_text_view_holder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="675000" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/fragment_employee_previous_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/fragment_employee_next_button"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_employee_card_view" />
+
+    <Button
+        android:id="@+id/fragment_employee_next_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/previous"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/fragment_employee_previous_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_employee_card_view" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

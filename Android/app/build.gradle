@@ -51,11 +51,5 @@ dependencies {
     //navigation
     implementation("androidx.navigation:navigation-fragment-ktx:2.2.1")
     implementation("androidx.navigation:navigation-ui-ktx:2.2.1")
-    //testing
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    testImplementation("junit:junit:4.12")
-    androidTestImplementation("androidx.test.ext:junit:1.1.1")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.2.0")
-    androidTestImplementation("androidx.test.uiautomator:uiautomator:2.2.0")
-    androidTestImplementation("org.hamcrest:hamcrest-integration:1.3")
+
 }

@@ -22,7 +22,6 @@ class LoadingFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentLoadingBinding.inflate(inflater, container, false)
-        // Inflate the layout for this fragment
         return binding.root
     }
 

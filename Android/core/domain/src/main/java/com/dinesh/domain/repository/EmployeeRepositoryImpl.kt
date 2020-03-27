@@ -4,5 +4,7 @@ class EmployeeRepositoryImpl(
     private val remote: EmployeeRemote
 ) : EmployeeRepository {
 
-    override suspend fun fetchEmployee() = remote.fetchEmployee()
+    override suspend fun fetchDefaultEmployee() = remote.fetchDefaultEmployee()
+
+    override suspend fun fetchEmployeeById(id: String) = remote.fetchEmployeeById(id)
 }

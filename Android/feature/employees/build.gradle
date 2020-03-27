@@ -33,4 +33,11 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    //flux
+    implementation("com.github.svenjacobs.zen:zen-common:0.12")
+    implementation("com.github.svenjacobs.zen:zen-core:0.12")
+    implementation("com.github.svenjacobs.zen:zen-android:0.12")
+    implementation("com.github.svenjacobs.zen:zen-di-support-katana:0.12")
+    //project dependencies
+    api(project(":core:presentation"))
 }

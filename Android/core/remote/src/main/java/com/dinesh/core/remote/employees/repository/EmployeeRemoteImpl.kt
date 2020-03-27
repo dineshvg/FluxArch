@@ -2,6 +2,8 @@ package com.dinesh.core.remote.employees.repository
 
 import com.dinesh.core.remote.employees.mapper.MoshiMapper
 import com.dinesh.core.remote.employees.mapper.RemoteEmployeeMapper
+import com.dinesh.core.remote.employees.model.RemoteData
+import com.dinesh.core.remote.employees.model.RemoteEmployee
 import com.dinesh.domain.repository.EmployeeRemote
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.android.Android
@@ -17,8 +19,6 @@ import io.ktor.http.HttpMethod
 import io.ktor.http.isSuccess
 import io.ktor.util.KtorExperimentalAPI
 import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.mapNotNull
-import kotlinx.coroutines.withContext
 import kotlin.coroutines.CoroutineContext
 
 class EmployeeRemoteImpl(
@@ -31,7 +31,7 @@ class EmployeeRemoteImpl(
         private const val EMPLOYEES_URL = "http://dummy.restapiexample.com/api/v1/employee/2"
     }
 
-    //todo: add to DI
+    //todo: second stage
     @OptIn(KtorExperimentalAPI::class)
     fun initKtorClient() = HttpClient(Android) {
         install(Logging) {
@@ -40,15 +40,36 @@ class EmployeeRemoteImpl(
         }
     }
 
-    override suspend fun fetchEmployee() =
-        withContext(operationsCoroutineContext) {
-            return@withContext HttpClient()
-                .downloadEmployees()
-                .mapNotNull {
-                    mapper.mapTo(it)
-                }
-        }
+    //todo : use context
+    override suspend fun fetchDefaultEmployee() =
+        mapper.mapTo(
+            RemoteEmployee(
+                status = "active",
+                data = RemoteData(
+                    id = "1",
+                    employee_age = "31",
+                    employee_name = "Robert",
+                    employee_salary = "60,000",
+                    profile_image = null
+                )
+            )
+        )
 
+    override suspend fun fetchEmployeeById(id: String) =
+        mapper.mapTo(
+            RemoteEmployee(
+                status = "not active",
+                data = RemoteData(
+                    id = "1",
+                    employee_age = "31",
+                    employee_name = "Robert",
+                    employee_salary = "60,000",
+                    profile_image = null
+                )
+            )
+        )
+
+    //todo: second stage
     private suspend fun HttpClient.downloadEmployees() =
         flow {
             val response: HttpResponse = this@downloadEmployees.request<HttpResponse> {

@@ -1,12 +1,10 @@
 package com.dinesh.fluxarch.view
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
-import com.dinesh.fluxarch.R
+import androidx.fragment.app.Fragment
 import com.dinesh.fluxarch.databinding.FragmentEmployeeBinding
 
 class EmployeeFragment : Fragment() {
